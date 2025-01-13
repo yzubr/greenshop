@@ -97,7 +97,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 70px 40px;
 
-      & article {
+      /* & article {
         height: 350px;
       }
 
@@ -112,10 +112,11 @@
         font-weight: 700;
         line-height: 16px;
         color: rgb(70 163 88);
-      }
+      } */
     }
 
     .pagination {
+      justify-self: end;
       display: grid;
       grid-auto-flow: column;
       column-gap: 10px;

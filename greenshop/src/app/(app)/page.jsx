@@ -3,6 +3,7 @@ import Link from 'next/link'
 import imageComingSoon from '@/assets/images/imageComingSoon.png'
 import ListOfCategories from '@/components/ListOfCategories'
 import Pagination from '@/components/Pagination'
+import ProductCard from '@/components/ProductCard'
 import getProducts from '@/queries/get-products'
 import getProductCount from '@/queries/get-products-count'
 import BeachSpiderLily from '../../assets/images/BeachSpiderLily.png'
@@ -57,7 +58,8 @@ export default async function Page({ searchParams }) {
           <ul className={style['products-container']}>
             {products.map((product) => (
               <li key={product.id} className={style.product}>
-                <article>
+                <ProductCard product={product} />
+                {/* <article>
                   {product.path === null
                     ? (
                         <Image
@@ -79,7 +81,7 @@ export default async function Page({ searchParams }) {
                       )}
                   <h4>{product.name}</h4>
                   <p>${product.lPrice}</p>
-                </article>
+                </article> */}
               </li>
             ))}
           </ul>
