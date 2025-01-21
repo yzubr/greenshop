@@ -2,7 +2,7 @@ import '@fontsource-variable/montserrat'
 import Footer from '@/components/footer/Footer'
 import 'the-new-css-reset'
 import '@/style/app.css'
-import Header from '../../components/Header.jsx'
+import Header from '../../components/Header'
 
 export default function RootLayout({ children }) {
   return (

@@ -13,9 +13,6 @@ export default function LogInForm() {
         <Link href="#">Forgot Password?</Link>
         <button type="submit">Login</button>
       </form>
-      <p>Or login with</p>
-      <a href="#">Login with Google</a>
-      <a href="#">Login with Facebook</a>
     </article>
   )
 }

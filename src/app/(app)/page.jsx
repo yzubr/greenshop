@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import imageComingSoon from '@/assets/images/imageComingSoon.png'
+// import imageComingSoon from '@/assets/images/imageComingSoon.png'
 import ListOfCategories from '@/components/ListOfCategories'
 import Pagination from '@/components/Pagination'
 import ProductCard from '@/components/ProductCard'

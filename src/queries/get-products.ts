@@ -7,7 +7,7 @@ interface Options {
 
 export default function getProducts(options: Options = {}) {
   let query = database
-  .selectFrom('products')
+    .selectFrom('products')
     .innerJoin('prices', 'productId', 'products.id')
     .leftJoin('images', 'images.id', 'products.imageId')
     .select([
@@ -16,12 +16,13 @@ export default function getProducts(options: Options = {}) {
       'prices.lPrice',
       'images.path',
       'images.width',
-      'images.height'])
-      .limit(6)
+      'images.height'
+    ])
+    .limit(6)
 
-      if (options.page) {
-        query = query.offset((options.page - 1) * 6)
-      }
-  
-      return query.execute()
+  if (options.page) {
+    query = query.offset((options.page - 1) * 6)
+  }
+
+  return query.execute()
 }

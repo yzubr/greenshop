@@ -1,4 +1,4 @@
-import getCategories from '@/queries/get-categories.ts'
+import getCategories from '@/queries/get-categories'
 
 export default async function ListOfCategories() {
   const categories = await getCategories()

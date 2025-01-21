@@ -1,6 +1,6 @@
 import database from '@/modules/database'
 
-export default function getProducts( id: number ) {
+export default function getProducts(id: number) {
   return database
     .selectFrom('products')
     .innerJoin('prices', 'productId', 'products.id')

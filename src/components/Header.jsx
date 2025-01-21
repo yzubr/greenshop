@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import LogInRegisterModalOpen from '@/components/LogIn/LogInRegisterModalOpen'
 import styles from './Header.module.css'
-import HeaderLogo from './HeaderLogo.jsx'
+import HeaderLogo from './HeaderLogo'
 
 export default function Header() {
   return (

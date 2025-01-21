@@ -28,6 +28,7 @@ const ProductCard = ({ product }) => {
   // }
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       className={styles.card}
       onMouseEnter={() => setIsHovered(true)}

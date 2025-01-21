@@ -19,9 +19,9 @@ export interface ProductsTable {
   id: GeneratedAlways<number>
   categoryId: number
   imageId: number
+  descriptionFull: string
+  descriptionShort: string
   name: string
-  descriptionShort:string
-  descriptionFull:string
   createdAt: GeneratedAlways<Date>
 }
 
@@ -35,8 +35,8 @@ export interface PricesTable {
 export interface Database {
   categories: CategoriesTable
   images: ImagesTable
-  products: ProductsTable
   prices: PricesTable
+  products: ProductsTable
 }
 
 const database = new Kysely<Database>({

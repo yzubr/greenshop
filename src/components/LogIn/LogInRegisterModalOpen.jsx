@@ -8,7 +8,6 @@ export default function LogInRegisterModalOpen() {
   const [isVisible, setIsVisible] = useState(false)
 
   function showModal() {
-    console.log('Я НАЖАТ МАТЬ ТВОЮ')
     setIsVisible(true)
   }
 
