@@ -59,29 +59,6 @@ export default async function Page({ searchParams }) {
             {products.map((product) => (
               <li key={product.id} className={style.product}>
                 <ProductCard product={product} />
-                {/* <article>
-                  {product.path === null
-                    ? (
-                        <Image
-                          src={imageComingSoon}
-                          alt="Image coming soon"
-                          priority
-                          unoptimized
-                        />
-                      )
-                    : (
-                        <Image
-                          src={product.path}
-                          alt={product.name}
-                          width={product.width}
-                          height={product.height}
-                          priority
-                          unoptimized
-                        />
-                      )}
-                  <h4>{product.name}</h4>
-                  <p>${product.lPrice}</p>
-                </article> */}
               </li>
             ))}
           </ul>

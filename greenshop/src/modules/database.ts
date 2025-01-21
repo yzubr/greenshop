@@ -20,6 +20,8 @@ export interface ProductsTable {
   categoryId: number
   imageId: number
   name: string
+  descriptionShort:string
+  descriptionFull:string
   createdAt: GeneratedAlways<Date>
 }
 
