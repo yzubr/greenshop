@@ -1,0 +1,146 @@
+/* .carousel {
+  position: relative;
+  display: grid;
+  row-gap: 12px;
+}
+
+.images {
+  display: grid;
+  grid-auto-columns: 100%;
+  grid-auto-flow: column;
+  column-gap: 16px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & li {
+    scroll-snap-align: start;
+  }
+
+  & img {
+    display: grid;
+    width: 100%;
+    height: 378px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.dots {
+  position: absolute;
+  right: 0;
+  bottom: 58px;
+  left: 0;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+  justify-content: center;
+
+  & button {
+    display: grid;
+    width: 6px;
+    height: 6px;
+    padding: 2px;
+    cursor: pointer;
+    background-color: oklch(0% 0 0deg / 40%);
+    border-radius: 50%;
+  }
+}
+
+.arrows {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+  justify-content: flex-start;
+
+  & li:last-child {
+    rotate: 180deg;
+  }
+
+  & button {
+    padding: 6px;
+    cursor: pointer;
+    border: 1px solid currentcolor;
+    border-radius: 50%;
+
+    &:hover,
+    &:focus-visible {
+      color: oklch(94% 0.18 123.73deg);
+    }
+  }
+
+  & svg {
+    display: grid;
+    width: 20px;
+    height: 20px;
+    fill: currentcolor;
+  }
+} */
+
+.carousel {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute; /* Позиционируем слайды абсолютно */
+  top: 0; /* Устанавливаем верхнюю границу */
+  left: 0; /* Устанавливаем левую границу */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Изначально слайды невидимы */
+  transition: opacity 0.5s ease; /* Плавный переход для изменения прозрачности */
+  & div {
+    /* max-width: 530px; */
+    padding-top: 68px;
+    padding-left: 43px;
+  }
+
+  & h2 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    color: rgb(61 61 61);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  & h1 {
+    margin-bottom: 10px;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 70px;
+    color: rgb(61 61 61);
+    text-transform: uppercase;
+  }
+
+  & span {
+    color: rgb(70 163 88);
+  }
+
+  & p {
+    margin-bottom: 44px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgb(114 114 114);
+  }
+}
+
+.slide.active {
+  opacity: 1; /* Активный слайд видим */
+}

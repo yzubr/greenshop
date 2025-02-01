@@ -4,6 +4,20 @@
   padding: 0;
   background-color: rgb(255 255 255);
   border: none;
+  opacity: 0;
+  transition:
+    /* stylelint-disable-next-line plugin/no-low-performance-animation-properties */
+    display 1s allow-descret,
+    overlay 1s allow-descret,
+    opacity 1s;
+
+  &[open] {
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
 
   & header {
     display: flex;
