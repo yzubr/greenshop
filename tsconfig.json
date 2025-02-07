@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "src/components/Products/Products.jsx"  ],
+, "src/components/Products/Products.jsx", "src/components/Carousel/Carousel.jsx"  ],
   "exclude": [
     "node_modules"
   ]

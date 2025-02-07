@@ -17,8 +17,8 @@ export interface ImagesTable {
 
 export interface ProductsTable {
   id: GeneratedAlways<number>
-  categoryId: number
   imageId: number
+  categories: number
   descriptionFull: string
   descriptionShort: string
   name: string

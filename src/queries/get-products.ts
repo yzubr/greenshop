@@ -1,11 +1,12 @@
 import database from '@/modules/database'
 
 interface Options {
+  category: number
   page?: number
   query?: string
 }
 
-export default function getProducts(options: Options = {}) {
+export default function getProducts(options: Options) {
   let query = database
     .selectFrom('products')
     .innerJoin('prices', 'productId', 'products.id')
@@ -18,6 +19,7 @@ export default function getProducts(options: Options = {}) {
       'images.width',
       'images.height'
     ])
+    .where('products.categories', '=', options.category)
     .limit(6)
 
   if (options.page) {
