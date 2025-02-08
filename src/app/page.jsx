@@ -2,17 +2,18 @@ import Carousel from '@/components/Carousel/Carousel'
 import ListOfCategories from '@/components/ListOfCategories'
 import Pagination from '@/components/Pagination'
 import ProductCard from '@/components/ProductCard'
+import ProductSortMenu from '@/components/ProductSortMenu'
 import getProducts from '@/queries/get-products'
 import getProductCount from '@/queries/get-products-count'
 import style from './Page.module.css'
 
 export default async function Page({ searchParams }) {
-  const { category, page, query } = await searchParams
+  const { category, page, query, sort } = await searchParams
   console.log({ category, page, query })
-  const params = { category, page, query }
+  const params = { category, page, query, sort }
   const products = await getProducts(params)
   console.log(products)
-  const productCount = await getProductCount(params)
+  const productCount = await getProductCount(category)
   const pagesCount = Math.ceil(productCount / 6)
 
   return (
@@ -31,14 +32,7 @@ export default async function Page({ searchParams }) {
               <button type="button">New Arrivals</button>
               <button type="button">Sale</button>
             </ul>
-            <form>
-              <label htmlFor="sort-select">Sort by: </label>
-              <select name="sort" id="sort-select">
-                <option value="Default sorting">Default sorting</option>
-                <option value="Price (lowest first)">Price (Lowest first)</option>
-                <option value="Price (highest first)">Price (Highest first)</option>
-              </select>
-            </form>
+            <ProductSortMenu />
           </header>
           <ul className={style['products-container']}>
             {products.map((product) => (

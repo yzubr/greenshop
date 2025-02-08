@@ -5,7 +5,7 @@ import CartProvider from '@/components/CartProvider'
 import 'the-new-css-reset'
 import '@/style/app.css'
 import Footer from '@/components/footer/Footer'
-import Header from '../../components/Header/Header'
+import Header from '../components/Header/Header'
 
 export default function RootLayout({ children }) {
   return (

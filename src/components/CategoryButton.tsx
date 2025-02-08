@@ -14,13 +14,13 @@ export default function CategoryButton({ category, firstElement }:
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
-  useEffect(() => {
-    const currentCategoryId = searchParams.get('category')
-    if (!currentCategoryId) {
-      const newUrl = `${pathname}?category=${firstElement}`
-      window.history.replaceState({}, '', newUrl)
-    }
-  }, [pathname, searchParams, firstElement])
+  // useEffect(() => {
+  //   const currentCategoryId = searchParams.get('category')
+  //   if (!currentCategoryId) {
+  //     const newUrl = `${pathname}?category=${firstElement}`
+  //     window.history.replaceState({}, '', newUrl)
+  //   }
+  // }, [pathname, searchParams, firstElement])
 
   function generateUrl(categoryId:number) {
     const params = new URLSearchParams(searchParams)
