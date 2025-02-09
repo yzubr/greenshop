@@ -3,7 +3,7 @@ export default {
     serverActions: {
       bodySizeLimit: '3mb'
     }
-  },
+  }
   // images: {
   //   remotePatterns: [{
   //     hostname: 'images.unsplash.com',

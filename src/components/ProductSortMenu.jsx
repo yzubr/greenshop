@@ -1,9 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 export default function ProductSortMenu() {
+  const router = useRouter()
   const [sortValue, setSortValue] = useState('def')
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -18,7 +19,8 @@ export default function ProductSortMenu() {
   function handleSortChange(value) {
     const newUrl = generateUrl(value)
     setSortValue(value)
-    window.history.pushState({}, '', newUrl)
+
+    return router.push(newUrl, { scroll: false })
   }
 
   return (

@@ -2,27 +2,26 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 export interface Category {
   id: number;
   name: string;
 }
 
-export default function CategoryButton({ category, firstElement }:
-{ category: Category; firstElement: number }) {
+export default function CategoryButton({ category }: { category: Category }) {
+  const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  const currentCategoryId = searchParams.get('category')
 
-  // useEffect(() => {
-  //   const currentCategoryId = searchParams.get('category')
-  //   if (!currentCategoryId) {
-  //     const newUrl = `${pathname}?category=${firstElement}`
-  //     window.history.replaceState({}, '', newUrl)
-  //   }
-  // }, [pathname, searchParams, firstElement])
+  useEffect(() => {
+    if (!currentCategoryId) {
+      router.replace(`${pathname}?category=1`)
+    }
+  }, [currentCategoryId, pathname, router])
 
-  function generateUrl(categoryId:number) {
+  function generateUrl(categoryId: number) {
     const params = new URLSearchParams(searchParams)
     params.set('category', categoryId.toString())
 
@@ -30,9 +29,7 @@ export default function CategoryButton({ category, firstElement }:
   }
 
   return (
-    <Link
-      href={generateUrl(category.id)}
-    >
+    <Link href={generateUrl(category.id)}>
       {category.name}
     </Link>
   )

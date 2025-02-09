@@ -111,3 +111,70 @@
     }
   }
 }
+
+.link-to-blog-section {
+  margin: 100px 0;
+
+  & h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #3d3d3d;
+    text-align: center;
+  }
+
+  & p {
+    margin: 15px 0 35px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #727272;
+    text-align: center;
+  }
+
+  .post-in-blog-container {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 42px;
+
+    & .post-in-blog {
+      justify-content: space-between;
+      height: fit-content;
+
+      & img {
+        object-fit: cover;
+      }
+
+      & div {
+        height: 100%;
+        padding: 10px 16px;
+
+        & h3 {
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 26px;
+        }
+
+        & p {
+          display: -webkit-box; /* Используем флексбокс для обрезки */
+          margin: 4px 0 9px;
+          overflow: hidden; /* Скрываем переполнение */
+          text-align: start;
+          text-overflow: ellipsis; /* Добавляем многоточие в конце */
+          -webkit-line-clamp: 2; /* Ограничиваем до 2 строк */
+          -webkit-box-orient: vertical; /* Устанавливаем вертикальную ориентацию */
+        }
+
+        & a {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 16px;
+
+          &:hover {
+            color: #46a358;
+          }
+        }
+      }
+    }
+  }
+}

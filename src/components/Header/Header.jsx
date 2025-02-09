@@ -24,7 +24,7 @@ export default function Header() {
             <Link href="/plant-care">Plant Care</Link>
           </li>
           <li>
-            <Link href="/shop">Blogs</Link>
+            <Link href="/blog">Blog</Link>
           </li>
         </ul>
       </nav>

@@ -32,7 +32,17 @@ export interface PricesTable {
   createdAt: GeneratedAlways<Date>
 }
 
+export interface BlogTable {
+  id: GeneratedAlways<number>
+  imageId: number
+  description: string
+  name: string
+  text: string
+  createdAt: GeneratedAlways<Date>
+}
+
 export interface Database {
+  blog: BlogTable
   categories: CategoriesTable
   images: ImagesTable
   prices: PricesTable
