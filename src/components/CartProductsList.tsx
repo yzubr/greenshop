@@ -61,7 +61,7 @@ export default function CartProductsList({ products }: { products: Map<number, n
               <Link href={`/shop/${product.id}`}>{product.name}</Link>
               <p>${product.lPrice}</p>
               <p>{products.get(product.id)}</p>
-              <p>${product.lPrice * (products.get(product.id))}</p>
+              <p>${product.lPrice * (products.get(product.id) ?? 0)}</p>
               <RemoveFromCart productId={product.id} />
             </li>
           ))}
