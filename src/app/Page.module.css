@@ -6,13 +6,13 @@
   background: linear-gradient(97.77deg, rgb(245 245 245 / 50.2%) -23.46%, rgb(245 245 245 / 50%) 107.51%);
 }
 
-.button {
+/* .button {
   padding: 10px 27px;
   color: rgb(255 255 255);
   text-transform: uppercase;
   background-color: rgb(70 163 88 / 100%);
   border-radius: 6px;
-}
+} */
 
 .products-section {
   display: flex;
@@ -34,8 +34,13 @@
   }
 
   & aside {
+    width: 310px;
     padding: 14px 16px;
     background: rgb(251 251 251);
+
+    @media (width <= 375) {
+      display: none;
+    }
   }
 
   & article {
@@ -156,13 +161,13 @@
         }
 
         & p {
-          display: -webkit-box; /* Используем флексбокс для обрезки */
+          display: -webkit-box;
           margin: 4px 0 9px;
-          overflow: hidden; /* Скрываем переполнение */
+          overflow: hidden;
           text-align: start;
-          text-overflow: ellipsis; /* Добавляем многоточие в конце */
-          -webkit-line-clamp: 2; /* Ограничиваем до 2 строк */
-          -webkit-box-orient: vertical; /* Устанавливаем вертикальную ориентацию */
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
         }
 
         & a {

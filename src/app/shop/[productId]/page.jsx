@@ -8,7 +8,6 @@ export default async function Page({ params }) {
   const { productId } = await params
   const response = await getProductById(productId)
   const product = response[0]
-  console.log(productId)
 
   return (
     <>

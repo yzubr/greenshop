@@ -20,6 +20,7 @@ export default function Carousel() {
   return (
     <div className={styles.carousel}>
       {slides.map((SlideComponent, index) => (
+        // eslint-disable-next-line @eslint-react/no-array-index-key
         <div key={index} className={clsx(styles.slide, { [styles.active]: activeIndex === index })}>
           <SlideComponent />
         </div>

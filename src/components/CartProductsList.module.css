@@ -1,0 +1,341 @@
+.main-content {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-top: 100px;
+
+  & .list-of-products-container {
+    & header {
+      display: grid;
+      grid-template-columns: 70px auto 200px auto 200px auto;
+
+      & p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        text-align: left;
+        border-bottom: 1px solid rgb(70 163 88 / 50%);
+
+        &:first-of-type {
+          grid-column: 1 / 3;
+        }
+
+        &:last-of-type {
+          grid-column: 5/7;
+        }
+      }
+    }
+
+    & li {
+      display: grid;
+      grid-template-columns: 70px 1fr 200px auto 200px 50px;
+      align-items: center;
+      margin-top: 10px;
+      background: rgb(251 251 251);
+
+      & a {
+        padding-left: 14px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 16px;
+      }
+
+      & p {
+        &:first-of-type {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 16px;
+          color: #727272;
+          text-align: center;
+        }
+
+        &:last-of-type {
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 16px;
+          color: #46a358;
+          text-align: center;
+        }
+      }
+    }
+
+    @media (width <= 375px) {
+      & header {
+        display: none;
+      }
+
+      & li {
+        display: grid;
+        grid-template-columns: 100px 1fr auto 50px;
+        grid-row: 100px;
+        align-items: center;
+        margin: 10px 28px 0;
+        background: rgb(255 255 255);
+        box-shadow: 0 0 20px rgb(0 0 0 / 6%);
+
+        & li {
+          display: grid;
+          grid-template-rows: 100px auto; /* Устанавливаем высоту первой строки в 100px */
+          grid-template-columns: 100px 1fr auto; /* Убираем третий элемент и задаем 100px для первого */
+          align-items: center;
+          height: 100px;
+          margin-top: 10px;
+          background: rgb(251 251 251);
+        }
+
+        & li > :nth-child(1) {
+          grid-row: 1; /* Первый элемент занимает первую строку */
+          grid-column: 1; /* Первый элемент занимает первый столбец */
+        }
+
+        & li > :nth-child(2) {
+          grid-row: 1; /* Второй элемент также занимает первую строку */
+          grid-column: 2; /* Второй элемент занимает второй столбец */
+        }
+
+        & li > :nth-child(4) {
+          grid-row: 2; /* Четвертый элемент занимает вторую строку */
+          grid-column: 1; /* Четвертый элемент занимает первый столбец */
+        }
+
+        & li > :nth-child(5) {
+          grid-row: 2; /* Пятый элемент занимает вторую строку */
+          grid-column: 2; /* Пятый элемент занимает второй столбец */
+        }
+
+
+        & p {
+          &:first-of-type {
+            display: none;
+          }
+
+          &:nth-of-type(2)::before {
+            padding-right: 5px;
+            content: "Quantity:";
+          }
+
+          &:last-of-type {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 16px;
+            color: #46a358;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  & .cart-totals-container {
+    & h3 {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+      border-bottom: 1px solid rgb(70 163 88 / 50%);
+    }
+
+    & form {
+      margin-top: 10px;
+      margin-bottom: 30px;
+
+      & label {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+      }
+
+      & > div {
+        display: flex;
+        flex-flow: row nowrap;
+        height: 40px;
+        margin-top: 8px;
+
+        & input {
+          width: 100%;
+          padding: 12px;
+          color: rgb(172 172 172 / 100%);
+          background: rgb(255 255 255);
+          border: solid 1px rgb(70 163 88 / 100%);
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
+          box-shadow: 0 0 20px rgb(0 0 0 / 6%);
+        }
+
+        & button {
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: center;
+          width: 85px;
+          font-weight: 700;
+          color: rgb(255 255 255);
+          background-color: rgb(70 163 88 / 100%);
+          border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px;
+
+          &:hover {
+            background-color: rgb(50 143 68);
+          }
+        }
+      }
+    }
+
+    & > p {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 16px;
+
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+
+      & > span {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 16px;
+      }
+    }
+
+    & .small-link {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      color: #46a358;
+      text-align: right;
+    }
+
+    & h4 {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      margin: 24px 0 40px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 16px;
+
+      & span {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 16px;
+        color: #46a358;
+      }
+    }
+
+    & button {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 40px;
+      font-weight: 700;
+      color: rgb(255 255 255);
+      background-color: rgb(70 163 88 / 100%);
+      border-radius: 3px;
+    }
+
+    & .big-link {
+      display: block;
+      margin-top: 14px;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+      color: #46a358;
+      text-align: center;
+    }
+
+    @media (width <= 375px) {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 32px 28px;
+      background-color: rgb(255 255 255);
+
+      & h3 {
+        display: none;
+      }
+
+      & form {
+        margin-top: 0;
+        margin-bottom: 30px;
+
+        & label {
+          display: none;
+        }
+
+        & > div {
+          height: 50px;
+
+          & input {
+            width: 100%;
+            padding: 18px;
+            color: rgb(172 172 172 / 100%);
+            background: rgb(255 255 255);
+            border: none;
+            border-top-left-radius: 40px;
+            border-bottom-left-radius: 40px;
+            box-shadow: 0 0 20px rgb(0 0 0 / 6%);
+          }
+
+          & button {
+            height: 50px;
+            background: linear-gradient(93.11deg, rgb(70 163 88 / 54%) -0.94%, #46a358 105.02%);
+            border-radius: 0 40px 40px 0;
+
+            &:active {
+              background-color: rgb(50 143 68);
+            }
+          }
+        }
+      }
+
+      & > p {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 16px;
+
+        &:not(:last-of-type) {
+          margin-bottom: 15px;
+        }
+
+        & > span {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 16px;
+        }
+      }
+
+      & .small-link {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: #46a358;
+        text-align: right;
+      }
+
+      & h4 {
+        margin: 16px 0 28px;
+      }
+
+      & button {
+        border-radius: 40px;
+      }
+
+      & .big-link {
+        display: none;
+      }
+    }
+  }
+}

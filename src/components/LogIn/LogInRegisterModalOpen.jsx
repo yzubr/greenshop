@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import styles from '@/style/components.module.css'
 import LogInRegisterModal from './LogInRegisterModal'
-// import styles from './Modal.module.css'
 
 export default function LogInRegisterModalOpen() {
   const [isVisible, setIsVisible] = useState(false)
@@ -17,7 +17,7 @@ export default function LogInRegisterModalOpen() {
 
   return (
     <>
-      <button type="button" onClick={showModal}>
+      <button type="button" className={styles.button} onClick={showModal}>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
           <path d="M18.1601 10.1006H8.12598" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
           <path d="M15.7212 7.67059L18.1612 10.1006L15.7212 12.5306" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />

@@ -12,10 +12,8 @@ import style from './Page.module.css'
 
 export default async function Page({ searchParams }) {
   const { category, page, query, sort } = await searchParams
-  console.log({ category, page, query })
   const params = { category, page, query, sort }
   const products = await getProducts(params)
-  console.log(products)
   const postsInBlog = await getPostsInBlog()
   const productCount = await getProductCount(category)
   const pagesCount = Math.ceil(productCount / 6)

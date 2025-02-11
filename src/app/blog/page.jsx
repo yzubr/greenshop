@@ -5,7 +5,6 @@ import style from './Blog.module.css'
 
 export default async function Page() {
   const postsInBlog = await getPostsInBlog()
-  console.log(postsInBlog)
 
   return (
     <>

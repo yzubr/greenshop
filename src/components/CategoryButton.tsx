@@ -28,8 +28,16 @@ export default function CategoryButton({ category }: { category: Category }) {
     return `${pathname}?${params.toString()}`
   }
 
+  const isActive = currentCategoryId === category.id.toString()
+
   return (
-    <Link href={generateUrl(category.id)}>
+    <Link
+      href={generateUrl(category.id)}
+      style={{
+        color: isActive ? 'rgba(70, 163, 88, 1)' : 'inherit',
+        fontWeight: isActive ? 'bold' : 'normal'
+      }}
+    >
       {category.name}
     </Link>
   )
